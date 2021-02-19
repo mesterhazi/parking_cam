@@ -1,0 +1,12 @@
+[Unit]
+Description=pcam_http
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=idle
+WorkingDirectory=/home/pi/cam_stream/jsmpeg
+ExecStart=/usr/bin/http-server
+
+[Install]
+WantedBy=multi-user.target

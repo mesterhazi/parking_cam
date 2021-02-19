@@ -1,0 +1,15 @@
+[Unit]
+Description=pcam_websocket
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=idle
+WorkingDirectory=/home/pi/cam_stream/jsmpeg
+ExecStart=/usr/bin/node websocket-relay.js supersecret 8081 8082
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
